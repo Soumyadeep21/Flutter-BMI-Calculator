@@ -13,9 +13,9 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text('Body Text'),
-      ),
+      body: Container(
+        color: Color(0xff1D1F33),
+      )
     );
   }
 }
