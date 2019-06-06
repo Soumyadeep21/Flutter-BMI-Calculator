@@ -43,7 +43,11 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                       update(1); 
+                      });
+                    },
                     child: ReusableCard(
                       color: maleCardColor,
                       cardChild: IconContent(
@@ -55,7 +59,11 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                       update(2); 
+                      });
+                    },
                     child: ReusableCard(
                       color: femaleCardColor,
                       cardChild: IconContent(
