@@ -4,6 +4,9 @@ import 'package:bmi_calculator/screens/bottom_button.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +20,8 @@ class ResultsPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
                 style: kTitleStyle,
