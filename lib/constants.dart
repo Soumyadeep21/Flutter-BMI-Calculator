@@ -39,3 +39,9 @@ const kBMIStyle = TextStyle(
 const kBodyStyle = TextStyle(
   fontSize: 22.0,
 );
+
+const Map<String,Color> weightColor = {
+  "Underweight" : Colors.yellow,
+  "Normal" : Colors.lightGreen,
+  "Overweight" : Colors.red
+};
