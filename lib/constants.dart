@@ -41,7 +41,8 @@ const kBodyStyle = TextStyle(
 );
 
 const Map<String,Color> weightColor = {
-  "Underweight" : Colors.yellow,
-  "Normal" : Colors.lightGreen,
-  "Overweight" : Colors.red
+  "Underweight" : Color(0xff33B1E4),
+  "Normal" : Color(0xff94C947),
+  "Overweight" : Color(0xffF99929),
+  "Obesity" : Color(0xffC92C33)
 };
