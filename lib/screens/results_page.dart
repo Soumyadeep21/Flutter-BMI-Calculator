@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
 
-  
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  const ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +41,15 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    resultText,
                     style: kResultStyle,
                   ),
                   Text(
-                    '10.3',
+                    bmiResult,
                     style: kBMIStyle,
                   ),
                   Text(
-                    'Your BMI level is quite low, you should eat more',
+                    interpretation,
                     style: kBodyStyle,
                     textAlign: TextAlign.center,
                   )
