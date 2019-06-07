@@ -199,7 +199,13 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-           ButtomButton()
+          ButtomButton(
+            buttonTitle: 'CALCULATE',
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => ResultsPage()));
+            },
+          ),
         ],
       ),
     );
@@ -207,7 +213,6 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ButtomButton extends StatelessWidget {
-
   final Function onTap;
   final String buttonTitle;
 
@@ -216,10 +221,7 @@ class ButtomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => ResultsPage()));
-      },
+      onTap: onTap,
       child: Container(
         height: kBottomContainerHeight,
         width: double.infinity,
