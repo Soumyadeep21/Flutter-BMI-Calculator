@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/bottom_button.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/icon_content.dart';
 import 'package:bmi_calculator/results_page.dart';
@@ -199,7 +200,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          ButtomButton(
+          BottomButton(
             buttonTitle: 'CALCULATE',
             onTap: () {
               Navigator.of(context)
@@ -207,32 +208,6 @@ class _InputPageState extends State<InputPage> {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ButtomButton extends StatelessWidget {
-  final Function onTap;
-  final String buttonTitle;
-
-  ButtomButton({@required this.onTap, @required this.buttonTitle});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: kBottomContainerHeight,
-        width: double.infinity,
-        margin: EdgeInsets.only(top: 10),
-        color: kBottomContainerColor,
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: kLargeButtonStyle,
-          ),
-        ),
       ),
     );
   }
