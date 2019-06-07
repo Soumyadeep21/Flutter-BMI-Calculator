@@ -30,8 +30,8 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: (selectedGender == Gender.male)
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     onPressed: () {
                       setState(() {
                         selectedGender = Gender.male;
@@ -46,8 +46,8 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: (selectedGender == Gender.female)
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     onPressed: () {
                       setState(() {
                         selectedGender = Gender.female;
@@ -64,7 +64,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              color: activeCardColor,
+              color: kActiveCardColor,
             ),
           ),
           Expanded(
@@ -72,22 +72,22 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    color: activeCardColor,
+                    color: kActiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: activeCardColor,
+                    color: kActiveCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
             width: double.infinity,
             margin: EdgeInsets.only(top: 10),
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
           )
         ],
       ),
