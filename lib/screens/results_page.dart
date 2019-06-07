@@ -4,12 +4,14 @@ import 'package:bmi_calculator/screens/bottom_button.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
-
   final String bmiResult;
   final String resultText;
   final String interpretation;
 
-  const ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+  const ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +43,12 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    resultText,
-                    style: kResultStyle,
+                    resultText.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      color: weightColor[resultText],
+                    ),
                   ),
                   Text(
                     bmiResult,
@@ -59,7 +65,7 @@ class ResultsPage extends StatelessWidget {
           ),
           BottomButton(
             buttonTitle: 'RE-CALCULATE',
-            onTap: (){
+            onTap: () {
               Navigator.of(context).pop();
             },
           ),
