@@ -204,9 +204,16 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonTitle: 'CALCULATE',
             onTap: () {
-              CalculatorBMI calc = CalculatorBMI(height: height,weight: weight);
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => ResultsPage()));
+              CalculatorBMI calc =
+                  CalculatorBMI(height: height, weight: weight);
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (_) => ResultsPage(
+                          bmiResult: calc.getBMI(),
+                          resultText: calc.getResult(),
+                          interpretation: calc.getInterpretation(),
+                        )),
+              );
             },
           ),
         ],
