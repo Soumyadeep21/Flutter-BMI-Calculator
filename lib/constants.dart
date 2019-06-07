@@ -24,3 +24,9 @@ const kTitleStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.bold
 );
+
+const kResultStyle = TextStyle(
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+  color: Color(0xff24d876)
+);
