@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/icon_content.dart';
+import 'package:bmi_calculator/results_page.dart';
 import 'package:bmi_calculator/reusable_card.dart';
 import 'package:bmi_calculator/round_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 180 , weight = 70 , age = 20;
+  int height = 180, weight = 70, age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -91,13 +92,14 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
-                      activeTrackColor: Colors.white,
-                      inactiveTrackColor: Color(0xff8d8e98),
-                      thumbColor: Color(0xffeb1555),
-                      overlayColor: Color(0x29eb1555)
-                    ),
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 15),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 30),
+                        activeTrackColor: Colors.white,
+                        inactiveTrackColor: Color(0xff8d8e98),
+                        thumbColor: Color(0xffeb1555),
+                        overlayColor: Color(0x29eb1555)),
                     child: Slider(
                       value: height.toDouble(),
                       min: 120.0,
@@ -122,25 +124,30 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('WEIGHT',style: kLabelStyle,),
-                        Text('$weight',style: kNumberStyle,),
+                        Text(
+                          'WEIGHT',
+                          style: kLabelStyle,
+                        ),
+                        Text(
+                          '$weight',
+                          style: kNumberStyle,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             RoundIconButton(
                               icon: Icons.remove,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
-                                 if(weight > 1)
-                                 weight--; 
+                                  if (weight > 1) weight--;
                                 });
                               },
                             ),
                             RoundIconButton(
                               icon: Icons.add,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
-                                 weight++; 
+                                  weight++;
                                 });
                               },
                             ),
@@ -156,25 +163,30 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('AGE',style: kLabelStyle,),
-                        Text('$age',style: kNumberStyle,),
+                        Text(
+                          'AGE',
+                          style: kLabelStyle,
+                        ),
+                        Text(
+                          '$age',
+                          style: kNumberStyle,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             RoundIconButton(
                               icon: Icons.remove,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
-                                 if(age > 1)
-                                 age--; 
+                                  if (age > 1) age--;
                                 });
                               },
                             ),
                             RoundIconButton(
                               icon: Icons.add,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
-                                 age++; 
+                                  age++;
                                 });
                               },
                             ),
@@ -187,11 +199,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            height: kBottomContainerHeight,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 10),
-            color: kBottomContainerColor,
+          GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => ResultsPage()
+              ));
+            },
+            child: Container(
+              height: kBottomContainerHeight,
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 10),
+              color: kBottomContainerColor,
+              child: Text('CALCULATE'),
+            ),
           )
         ],
       ),
