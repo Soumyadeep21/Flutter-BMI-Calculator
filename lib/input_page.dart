@@ -93,6 +93,7 @@ class _InputPageState extends State<InputPage> {
                       thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
                       overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
                       activeTrackColor: Colors.white,
+                      inactiveTrackColor: Color(0xff8d8e98),
                       thumbColor: Color(0xffeb1555),
                       overlayColor: Color(0x29eb1555)
                     ),
@@ -100,7 +101,6 @@ class _InputPageState extends State<InputPage> {
                       value: height.toDouble(),
                       min: 120.0,
                       max: 220.0,
-                      inactiveColor: Color(0xff8d8e98),
                       onChanged: (newValue) {
                         setState(() {
                           height = newValue.round();
